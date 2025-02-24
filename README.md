@@ -30,7 +30,7 @@ Currently, the model **may not** be that accurate but we are working to improve 
 
 2. **Set up a virtual environment (optional but recommended):**
     ```bash
-    Copypython -m venv venv
+    python -m venv venv
     source venv/bin/activate  # For Linux/Mac
     venv\Scripts\activate     # For Windows
 
@@ -52,20 +52,20 @@ Currently, the model **may not** be that accurate but we are working to improve 
 
 1. **Train the model:**
 
-- Run the following command to train the model:
-    ```bash
-    python SansSandhi.py
+   - Run the following command to train the model:
+       ```bash
+       python SansSandhi.py
 
-- This will process the dataset, train the Multi-Layer Perceptron (MLP) model, and save it as sanskrit_model.pkl
+   - This will process the dataset, train the Multi-Layer Perceptron (MLP) model, and save it as sanskrit_model.pkl
 
 
 2. **Start the FastAPI server:**
 
-- Start the FastAPI API to serve predictions:
-    ```bash
-    Copyuvicorn app:app --reload
+   - Start the FastAPI API to serve predictions:
+       ```bash
+       Copyuvicorn app:app --reload
 
-- The API will be available at http://127.0.0.1:8000
+   - The API will be available at http://127.0.0.1:8000
 
 
 
@@ -73,17 +73,17 @@ Currently, the model **may not** be that accurate but we are working to improve 
 
 1. **Start the bot:**
 
-- Run the bot script:
-    ```bash
-    python bot.py
+   - Run the bot script:
+       ```bash
+       python bot.py
 
-- The bot will be active and respond to messages sent to it
+   - The bot will be active and respond to messages sent to it
 
 
 2. **Interacting with the bot:**
 
-- Send a Sanskrit word to the bot
-- The bot will split the word by characters and predict whether each character is part of a Sandhi point (SP) or not (NSP)
+   - Send a Sanskrit word to the bot
+   - The bot will split the word by characters and predict whether each character is part of a Sandhi point (SP) or not (NSP)
 
 
 
@@ -91,8 +91,8 @@ Currently, the model **may not** be that accurate but we are working to improve 
 
 **Telegram Bot:**
 
-- Send a word like यॊयस्माज्जायते to the bot
-- The bot will return the predictions for each character: either SP or NSP
+   - Send a word like यॊयस्माज्जायते to the bot
+   - The bot will return the predictions for each character: either SP or NSP
 
 
 
@@ -100,20 +100,20 @@ Currently, the model **may not** be that accurate but we are working to improve 
 
 1. **Data Preprocessing:**
 
-- The dataset is preprocessed to tokenize Sanskrit words and split them into sequences of characters
-- The tokenizer is trained on a predefined set of characters and used to convert words into sequences of indices
+   - The dataset is preprocessed to tokenize Sanskrit words and split them into sequences of characters
+   - The tokenizer is trained on a predefined set of characters and used to convert words into sequences of indices
 
 
 2. **Model Training:**
 
-- A Multi-Layer Perceptron (MLP) model is built to classify each character in a word as part of a Sandhi point (SP) or not (NSP)
-- The model is trained on tokenized and padded sequences of words
+   - A Multi-Layer Perceptron (MLP) model is built to classify each character in a word as part of a Sandhi point (SP) or not (NSP)
+   - The model is trained on tokenized and padded sequences of words
 
 
 3. **Prediction:**
 
-- The trained model is used to predict the label (SP or NSP) for each character in a given Sanskrit word
-- The FastAPI server and Telegram bot provide interfaces for users to interact with the model
+   - The trained model is used to predict the label (SP or NSP) for each character in a given Sanskrit word
+   - The FastAPI server and Telegram bot provide interfaces for users to interact with the model
 
 
 
@@ -127,5 +127,9 @@ Currently, the model **may not** be that accurate but we are working to improve 
     ├── .env              # Store your Telegram bot token here
     └── data/
         └── dataset.txt   # Training dataset
+
+### Contributions
+   - You can help refine the dataset creation, code for that is available at https://github.com/pradyumna-7/Sandhi-Splits
+   - Look forward to contributions of refinement of the model 
 
 
