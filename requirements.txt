@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+joblib
+tensorflow
+numpy
+python-telegram-bot
+requests
