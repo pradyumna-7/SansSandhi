@@ -3,7 +3,8 @@ This repository provides a character-level model for Sanskrit text classificatio
 
 # Sanskrit Sandhi Point Prediction Bot
 
-This project provides a character-level classification model for Sanskrit text. It predicts whether each character in a word is part of a Sandhi Point (SP) or not (NSP). The system includes an API for model interaction and a Telegram bot for user-friendly predictions.
+This project provides a character-level classification model for Sanskrit text. It predicts whether each character in a word is part of a Sandhi Point (SP) or not (NSP). The system includes an API for model interaction and a Telegram bot for user-friendly predictions. These labels can help in reconstructing the original words before Sandhi formation, improving Sanskrit text segmentation, and aiding NLP tasks.
+Currently, the model **may not** be that accurate but we are working to improve and also explore different aspects like using different tokenizers and also exploring RNNs
 
 ## Features
 - **Character-level classification**: Predicts if each character in a Sanskrit word is part of a Sandhi point.
@@ -51,20 +52,20 @@ This project provides a character-level classification model for Sanskrit text. 
 
 1. **Train the model:**
 
-Run the following command to train the model:
+- Run the following command to train the model:
     ```bash
     python SansSandhi.py
 
-This will process the dataset, train the Multi-Layer Perceptron (MLP) model, and save it as sanskrit_model.pkl
+- This will process the dataset, train the Multi-Layer Perceptron (MLP) model, and save it as sanskrit_model.pkl
 
 
 2. **Start the FastAPI server:**
 
-Start the FastAPI API to serve predictions:
+- Start the FastAPI API to serve predictions:
     ```bash
     Copyuvicorn app:app --reload
 
-The API will be available at http://127.0.0.1:8000
+- The API will be available at http://127.0.0.1:8000
 
 
 
@@ -72,17 +73,17 @@ The API will be available at http://127.0.0.1:8000
 
 1. **Start the bot:**
 
-Run the bot script:
+- Run the bot script:
     ```bash
     python bot.py
 
-The bot will be active and respond to messages sent to it
+- The bot will be active and respond to messages sent to it
 
 
 2. **Interacting with the bot:**
 
-Send a Sanskrit word to the bot
-The bot will split the word by characters and predict whether each character is part of a Sandhi point (SP) or not (NSP)
+- Send a Sanskrit word to the bot
+- The bot will split the word by characters and predict whether each character is part of a Sandhi point (SP) or not (NSP)
 
 
 
@@ -90,8 +91,8 @@ The bot will split the word by characters and predict whether each character is 
 
 **Telegram Bot:**
 
-Send a word like यॊयस्माज्जायते to the bot
-The bot will return the predictions for each character: either SP or NSP
+- Send a word like यॊयस्माज्जायते to the bot
+- The bot will return the predictions for each character: either SP or NSP
 
 
 
@@ -99,25 +100,24 @@ The bot will return the predictions for each character: either SP or NSP
 
 1. **Data Preprocessing:**
 
-The dataset is preprocessed to tokenize Sanskrit words and split them into sequences of characters
-The tokenizer is trained on a predefined set of characters and used to convert words into sequences of indices
+- The dataset is preprocessed to tokenize Sanskrit words and split them into sequences of characters
+- The tokenizer is trained on a predefined set of characters and used to convert words into sequences of indices
 
 
 2. **Model Training:**
 
-A Multi-Layer Perceptron (MLP) model is built to classify each character in a word as part of a Sandhi point (SP) or not (NSP)
-The model is trained on tokenized and padded sequences of words
+- A Multi-Layer Perceptron (MLP) model is built to classify each character in a word as part of a Sandhi point (SP) or not (NSP)
+- The model is trained on tokenized and padded sequences of words
 
 
 3. **Prediction:**
 
-The trained model is used to predict the label (SP or NSP) for each character in a given Sanskrit word
-The FastAPI server and Telegram bot provide interfaces for users to interact with the model
+- The trained model is used to predict the label (SP or NSP) for each character in a given Sanskrit word
+- The FastAPI server and Telegram bot provide interfaces for users to interact with the model
 
 
 
 ### Folder Structure
-    ```bash
     sanskrit-sandhi-prediction/
     ├── app.py             # FastAPI API to serve the model
     ├── bot.py             # Telegram bot script
