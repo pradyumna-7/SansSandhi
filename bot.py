@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
 
 # Replace with your bot token
-TOKEN = "7610331736:AAFHHTUl1uw92WH1AU3e76iv5RKM-OCMRqs"
+TOKEN = "your_bot_token"
 API_URL = "http://127.0.0.1:8000/predict/"  # Adjust based on deployment
 
 logging.basicConfig(level=logging.INFO)
